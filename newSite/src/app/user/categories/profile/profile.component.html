@@ -1,0 +1,99 @@
+<nav class="navbar navPolitics p-4" style="background-color: #f7f4f0;">
+    <b>
+        <h2 class="navbar-brand" style="font-weight: 600; font-size: 25px; text-transform: uppercase;">
+            {{news.categories}}
+        </h2>
+
+    </b>
+</nav>
+
+<div class="container">
+    <h1 style="padding: 20px;">
+        {{news.title}}
+
+    </h1>
+    <div class="row">
+        <div class="col-sm-11">
+            <!-- <div class="col  m-2"> -->
+            <div class="card bg-dark text-white">
+                <img src="{{imageUrl}}{{news.image[0]}}" class="img-fluid img-big" style="width: 100%; height: 100%;" alt="">
+                <div class="card-img-overlay " style="padding-top: auto;">
+
+                    <p style="text-align: center;">
+                        <h4>
+                            <i class="bi bi-clock"></i> {{news.updatedAt | date:'EEEE, d MMMM y, h:mm a'}}
+                        </h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="12 mt-4">
+        <h5>
+            {{news.description}}
+        </h5>
+    </div>
+
+
+</div>
+
+
+
+
+<div class="container-fluid mt-5">
+    <h1 class=" text-black " style=" padding-left: 10px; margin:10px; height: 50px; border-radius: 10px; background-color: #FFD58A; ">
+        RELATED NEWS
+    </h1>
+
+    <owl-carousel-o [options]="customOptions">
+
+        <ng-template carouselSlide>
+            <div class="card" style=" padding: 4px;">
+                <img src="{{imageUrl}}{{politics[0].image[0]}}" class="img-fluid img-big" style="width: 100%; height: 300px;" alt="">
+
+                <div class="card-body" style="background-color: rgb(240, 240, 240);">
+                    <p class="card-text">
+                        <a routerLink='/user/categories/politics'>
+                            <h5 class="card-title description" style="font-size: 30px; color:black;">{{politics[0].title}}</h5>
+                        </a>
+                        <h4>
+                            <i class="bi bi-clock"></i> {{politics[0].updatedAt | date:'EEEE, d MMMM y'}}
+                        </h4>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide>
+            <div class="card" style=" padding: 4px;">
+                <img src="{{imageUrl}}{{entertainment[0].image[0]}}" class="img-fluid img-big card-img-top" style="width: 100%; height: 300px;" alt="">
+
+                <div class="card-body" style="background-color: rgb(240, 240, 240);">
+                    <p class="card-text">
+                        <a routerLink='/user/categories/entertainment'>
+                            <h5 class="card-title description" style="font-size: 30px; color:black;">{{entertainment[0].title}}</h5>
+                        </a>
+                        <h4>
+                            <i class="bi bi-clock"></i> {{entertainment[0].updatedAt | date:'EEEE, d MMMM y'}}
+                        </h4>
+                        <!-- </p> -->
+                </div>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide style="padding: 4px;">
+            <div class="card" style="padding: 4px;">
+                <img src="{{imageUrl}}{{travel[0].image[0]}}" class="img-fluid img-big" style="width: 100%; height: 300px;" alt="">
+
+                <div class="card-body" style="background-color: rgb(240, 240, 240);">
+                    <p class="card-text">
+                        <a routerLink='/user/categories/travels'>
+
+                            <h5 class="card-title description" style="font-size: 30px; color:black;">{{travel[0].title}}</h5>
+                        </a>
+                        <h4>
+                            <i class="bi bi-clock"></i> {{travel[0].updatedAt | date:'EEEE, d MMMM y'}}
+                        </h4>
+                </div>
+            </div>
+        </ng-template>
+
+    </owl-carousel-o>
+</div>

@@ -1,0 +1,18 @@
+    .img-small {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin: 20px;
+    }
+    
+    .row-small-image {
+        margin-bottom: 5px;
+        background-color: rgb(240, 240, 240);
+        border-radius: 10px;
+    }
+    
+    h1 {
+        padding: 10px;
+        font-size: 50px;
+        text-align: center;
+    }
